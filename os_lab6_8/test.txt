@@ -1,0 +1,13 @@
+create 1 0
+create 2 1
+create 3 1
+exec 1 start
+exec 2 time
+exec 1 stop
+exec 3 start
+exec 1 time
+remove 3
+exec 3 time
+ping 3
+ping 5
+exit
