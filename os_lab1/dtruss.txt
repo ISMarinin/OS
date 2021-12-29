@@ -1,0 +1,60 @@
+
+	PID/THRD  RELATIVE  ELAPSD    CPU SYSCALL(args) 		 = return
+Sitax: ./a.out Threads_num Num_for_test
+15200/0x5f3a4:       782:        0:       0 fork()		 = 0 2
+15200/0x5f3a4:       878     187     95 open("/dev/dtracehelper\0", 0x2, 0x0)	 = 3 0
+15200/0x5f3a4:      1103     223    221 ioctl(0x3, 0x80086804, 0x7FFEE34F39C0)	 = 0 0
+15200/0x5f3a4:      1119      17     14 close(0x3)		 = 0 0
+15200/0x5f3a4:      1198       6      2 mprotect(0x10C70F000, 0x4000, 0x1)	 = 0 0
+15200/0x5f3a4:      1246       5      2 access("/AppleInternal/XBS/.isChrooted\0", 0x0, 0x0)		 = -1 2
+15200/0x5f3a4:      1267       6      2 bsdthread_register(0x7FFF2030F434, 0x7FFF2030F420, 0x2000)		 = 1073742047 0
+15200/0x5f3a4:      1690       7      4 shm_open(0x7FFF201E7F66, 0x0, 0x201E6CBB)		 = 3 0
+15200/0x5f3a4:      1692       3      0 fstat64(0x3, 0x7FFEE34F2950, 0x0)	 = 0 0
+15200/0x5f3a4:      1698       9      4 mmap(0x0, 0x1000, 0x1, 0x40001, 0x3, 0x0)		 = 0x10C71D000 0
+15200/0x5f3a4:      1701       2      0 close(0x3)		 = 0 0
+15200/0x5f3a4:      1925       3      1 ioctl(0x2, 0x4004667A, 0x7FFEE34F2A04)	 = 0 0
+15200/0x5f3a4:      1936       3      1 mprotect(0x10C723000, 0x1000, 0x0)	 = 0 0
+15200/0x5f3a4:      1937       2      0 mprotect(0x10C72A000, 0x1000, 0x0)	 = 0 0
+15200/0x5f3a4:      1946       2      0 mprotect(0x10C72B000, 0x1000, 0x0)	 = 0 0
+15200/0x5f3a4:      1947       2      1 mprotect(0x10C732000, 0x1000, 0x0)	 = 0 0
+15200/0x5f3a4:      1959       3      1 mprotect(0x10C71E000, 0x90, 0x1)	 = 0 0
+15200/0x5f3a4:      1965       3      0 mprotect(0x10C733000, 0x1000, 0x1)	 = 0 0
+15200/0x5f3a4:      1968       3      1 mprotect(0x10C71E000, 0x90, 0x3)	 = 0 0
+15200/0x5f3a4:      1978       3      1 mprotect(0x10C71E000, 0x90, 0x1)	 = 0 0
+15200/0x5f3a4:      2005       3      0 issetugid(0x0, 0x0, 0x0)		 = 0 0
+15200/0x5f3a4:      2309       5      1 getentropy(0x7FFEE34F21A0, 0x20, 0x0)	 = 0 0
+15200/0x5f3a4:      2312       4      2 getentropy(0x7FFEE34F21F0, 0x40, 0x0)	 = 0 0
+15200/0x5f3a4:      2389       3      0 getpid(0x0, 0x0, 0x0)		 = 15200 0
+15200/0x5f3a4:      2397       4      2 stat64("/AppleInternal\0", 0x7FFEE34F2F30, 0x0)		 = -1 2
+15200/0x5f3a4:      2414       5      1 csops_audittoken(0x3B60, 0x7, 0x7FFEE34F2A60)		 = -1 22
+15200/0x5f3a4:      2417       4      2 proc_info(0x2, 0x3B60, 0xD)		 = 64 0
+15200/0x5f3a4:      2429       3      0 csops_audittoken(0x3B60, 0x7, 0x7FFEE34F2B50)		 = -1 22
+15200/0x5f3a4:      2440      11      6 sysctlbyname(kern.osvariant_status, 0x15, 0x7FFEE34F2F80, 0x7FFEE34F2F78, 0x0)		 = 0 0
+15200/0x5f3a4:      2442       2      0 csops(0x3B60, 0x0, 0x7FFEE34F2FB4)	 = 0 0
+15200/0x5f3a4:      2447       5      2 sysctlbyname(kern.system_version_compat, 0x1A, 0x0, 0x0, 0x7FFEE34F2FEC)		 = 0 0
+15200/0x5f3a4:      2517      64      0 getrlimit(0x1008, 0x7FFEE34F47C0, 0x0)	 = 0 0
+15200/0x5f3a4:      2521       5      3 fstat64(0x1, 0x7FFEE34F47A8, 0x0)	 = 0 0
+15200/0x5f3a4:      2524       3      0 ioctl(0x1, 0x4004667A, 0x7FFEE34F47F4)	 = 0 0
+dtrace: error on enabled probe ID 1682 (ID 956: syscall::write_nocancel:return): invalid kernel access in action #13 at DIF offset 68
+
+CALL                                        COUNT
+access                                          1
+bsdthread_register                              1
+csops                                           1
+exit                                            1
+getpid                                          1
+getrlimit                                       1
+issetugid                                       1
+mmap                                            1
+open                                            1
+proc_info                                       1
+shm_open                                        1
+stat64                                          1
+write_nocancel                                  1
+close                                           2
+csops_audittoken                                2
+fstat64                                         2
+getentropy                                      2
+sysctlbyname                                    2
+ioctl                                           3
+mprotect                                        9
